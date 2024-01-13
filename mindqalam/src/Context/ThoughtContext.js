@@ -9,9 +9,11 @@ export const ThoughtsProvider = ({ children }) => {
     "forgottenThoughts",
     []
   );
-  const [feelingsFrequency, setFeelingsFrequency] = useState({});
+  const [feelingsFrequency, setFeelingsFrequency] = useLocalStorage(
+    "feelingsFrequency",
+    {}
+  );
 
-  // Function to calculate feelings frequency
   const calculateFeelingsFrequency = () => {
     const frequency = {};
     thoughts.forEach((thought) => {
@@ -22,19 +24,16 @@ export const ThoughtsProvider = ({ children }) => {
     return frequency;
   };
 
-  // Call this function to update the feelings frequency state
   const updateFeelingsFrequency = () => {
     const newFrequency = calculateFeelingsFrequency();
     setFeelingsFrequency(newFrequency);
   };
 
-  // Function to add a new thought
   const addThought = (newThought) => {
     setThoughts((prevThoughts) => [...prevThoughts, newThought]);
-    updateFeelingsFrequency(); // Update frequency after adding a thought
+    updateFeelingsFrequency();
   };
 
-  // Function to forget a thought
   const forgetThought = (thoughtId) => {
     const updatedThoughts = thoughts.filter(
       (thought) => thought.id !== thoughtId
@@ -44,16 +43,15 @@ export const ThoughtsProvider = ({ children }) => {
     );
     setThoughts(updatedThoughts);
     setForgottenThoughts((prev) => [...prev, forgottenThought]);
-    updateFeelingsFrequency(); // Update frequency after forgetting a thought
+    updateFeelingsFrequency();
   };
 
-  // Function to delete a thought
   const deleteThought = (thoughtId) => {
     const updatedForgottenThoughts = forgottenThoughts.filter(
       (thought) => thought.id !== thoughtId
     );
     setForgottenThoughts(updatedForgottenThoughts);
-    updateFeelingsFrequency(); // Update frequency after deleting a thought
+    updateFeelingsFrequency();
   };
 
   return (
@@ -64,7 +62,7 @@ export const ThoughtsProvider = ({ children }) => {
         forgottenThoughts,
         forgetThought,
         deleteThought,
-        feelingsFrequency, // Provide feelings frequency data to the context
+        feelingsFrequency,
       }}
     >
       {children}

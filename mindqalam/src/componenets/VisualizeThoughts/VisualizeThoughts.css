@@ -1,0 +1,32 @@
+.visualize-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 780px;
+  height: 600px;
+}
+
+.visualization-stage {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 780px;
+  height: 100%;
+  border: 1px solid gainsboro;
+  border-radius: 20px;
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: skyblue;
+  text-align: center;
+  font-size: smaller; /* Adjust as needed */
+}

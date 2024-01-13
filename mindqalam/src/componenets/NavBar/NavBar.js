@@ -5,6 +5,9 @@ import { Link } from "react-router-dom";
 function NavBar() {
   return (
     <div className="nav-bar">
+      <Link to="/Dashboard">
+        <button className="dashboard-btn">Dashboard</button>
+      </Link>
       <Link to="/">
         <button className="thought-btn">I have a thought</button>
       </Link>
