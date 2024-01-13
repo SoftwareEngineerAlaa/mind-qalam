@@ -1,0 +1,15 @@
+.nav-bar {
+  display: flex;
+  gap: 10px;
+}
+.nav-bar button {
+  font-size: 17px;
+  height: 35px;
+  border-radius: 10px;
+  border: 1px solid rgb(175, 175, 175);
+  font-weight: 400;
+  background-color: white;
+  margin-top: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}

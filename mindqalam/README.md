@@ -2,9 +2,16 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Stack Used
 
-In the project directory, you can run:
+Frontend:
+React
+
+Data Fetching:
+Axios
+
+API:
+ChatGPT
 
 ### `npm start`
 

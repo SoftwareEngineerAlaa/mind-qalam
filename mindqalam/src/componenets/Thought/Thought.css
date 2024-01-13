@@ -1,0 +1,72 @@
+.thought-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 650px;
+  /* margin-bottom: 2rem; */
+  border: 1px solid gainsboro;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px 5px rgba(73, 219, 255, 0.418);
+  margin-bottom: 50px;
+}
+
+.thought-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  height: 60px;
+  /* margin-top: 10px; */
+  /* margin-bottom: 2rem; */
+  background-color: rgb(248, 248, 248);
+}
+
+.thought-content {
+  padding: 0 10px;
+}
+.info-piece h5 {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: center;
+  width: fit-content;
+  border-radius: 5px;
+  margin: 5px 0;
+  padding: 0;
+}
+
+.thought-actions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  height: 50px;
+  /* margin: 10px 0; */
+  background-color: rgb(248, 248, 248);
+}
+
+button {
+  font-size: 15px;
+  height: 25px;
+  border-radius: 10px;
+  border: 1px solid rgb(175, 175, 175);
+  font-weight: 400;
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.forget-thought-btn:hover {
+  background-color: rgb(238, 255, 160);
+  color: sienna;
+  transition: all 0.3s ease-in-out;
+}
+.luck-thought-btn:hover {
+  color: red;
+  background-color: rgb(22, 21, 24);
+  transition: all 0.3s ease-in-out;
+}
