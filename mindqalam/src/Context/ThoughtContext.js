@@ -39,7 +39,7 @@ export const ThoughtsProvider = ({ children }) => {
   };
 
   const addThought = (newThought) => {
-    setThoughts((prevThoughts) => [...prevThoughts, newThought]);
+    setThoughts((prevThoughts) => [newThought, ...prevThoughts]);
   };
 
   const forgetThought = (thoughtId) => {
@@ -50,7 +50,7 @@ export const ThoughtsProvider = ({ children }) => {
       (thought) => thought.id === thoughtId
     );
     setThoughts(updatedThoughts);
-    setForgottenThoughts((prev) => [...prev, forgottenThought]);
+    setForgottenThoughts((prev) => [forgottenThought, ...prev]);
   };
 
   const rememberThought = (thoughtId) => {
@@ -61,7 +61,7 @@ export const ThoughtsProvider = ({ children }) => {
       (thought) => thought.id === thoughtId
     );
     setForgottenThoughts(updatedThoughts);
-    setThoughts((prev) => [...prev, rememberedThought]);
+    setThoughts((prev) => [rememberedThought, ...prev]);
   };
 
   const lockThought = (thoughtId) => {
@@ -70,7 +70,7 @@ export const ThoughtsProvider = ({ children }) => {
     );
     const lockedThought = thoughts.find((thought) => thought.id === thoughtId);
     setThoughts(updatedThoughts);
-    setLockedThoughts((prev) => [...prev, lockedThought]);
+    setLockedThoughts((prev) => [lockedThought, ...prev]);
   };
 
   const deleteThought = (thoughtId) => {
