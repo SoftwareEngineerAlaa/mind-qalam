@@ -1,6 +1,7 @@
 import React, { useContext, useState, useEffect } from "react";
 import { ThoughtsContext } from "../../Context/ThoughtContext"; // Update the path accordingly
 import "./VisualizeThoughts.css";
+import { Link } from "react-router-dom";
 
 // TODO mostly feeling since and least feeling since
 // TODO create a set of predefined responces for the compination of feelings and their frequency
@@ -106,25 +107,32 @@ function VisualizeThoughts() {
   return (
     <div className="visualize-container">
       <h1>Visualize Thoughts</h1>
-      <div
-        className="visualization-stage"
-        style={{ width: stageSize[0], height: stageSize[1] }}
-      >
-        {circles.map((circle, index) => (
-          <div
-            key={index}
-            className="circle"
-            style={{
-              width: circle.radius * 2,
-              height: circle.radius * 2,
-              left: circle.x - circle.radius,
-              top: circle.y - circle.radius,
-            }}
-          >
-            {circle.emotion}
-          </div>
-        ))}
-      </div>
+      {circles.length === 0 ? (
+        <h1 className="no-thoughts-message">
+          You have not enought thoughts to visualize,{" "}
+          <Link to={"/"}>add some!</Link>
+        </h1>
+      ) : (
+        <div
+          className="visualization-stage"
+          style={{ width: stageSize[0], height: stageSize[1] }}
+        >
+          {circles.map((circle, index) => (
+            <div
+              key={index}
+              className="circle"
+              style={{
+                width: circle.radius * 2,
+                height: circle.radius * 2,
+                left: circle.x - circle.radius,
+                top: circle.y - circle.radius,
+              }}
+            >
+              {circle.emotion}
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }

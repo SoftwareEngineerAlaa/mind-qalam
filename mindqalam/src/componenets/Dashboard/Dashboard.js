@@ -1,14 +1,18 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { ThoughtsContext } from "../../Context/ThoughtContext";
 
 const Dashboard = () => {
   const { feelingsFrequency } = useContext(ThoughtsContext);
+  const [totalFeelingsFrequency, setTotalFeelingsFrequency] = useState(0);
 
-  // Calculate total feelings frequency
-  const totalFeelingsFrequency = Object.values(feelingsFrequency).reduce(
-    (total, freq) => total + freq,
-    0
-  );
+  useEffect(() => {
+    // Calculate total feelings frequency when feelingsFrequency changes
+    const totalFrequency = Object.values(feelingsFrequency).reduce(
+      (total, freq) => total + freq,
+      0
+    );
+    setTotalFeelingsFrequency(totalFrequency);
+  }, [feelingsFrequency]);
 
   return (
     <div>

@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useState, useEffect } from "react";
 import useLocalStorage from "../CustomHooks/useLocalStorage";
 
 export const ThoughtsContext = createContext();
@@ -9,10 +9,19 @@ export const ThoughtsProvider = ({ children }) => {
     "forgottenThoughts",
     []
   );
+  const [lockedThoughts, setLockedThoughts] = useLocalStorage(
+    "lockedThoughts",
+    []
+  );
+
   const [feelingsFrequency, setFeelingsFrequency] = useLocalStorage(
     "feelingsFrequency",
     {}
   );
+
+  useEffect(() => {
+    updateFeelingsFrequency();
+  }, [thoughts]);
 
   const calculateFeelingsFrequency = () => {
     const frequency = {};
@@ -31,7 +40,6 @@ export const ThoughtsProvider = ({ children }) => {
 
   const addThought = (newThought) => {
     setThoughts((prevThoughts) => [...prevThoughts, newThought]);
-    updateFeelingsFrequency();
   };
 
   const forgetThought = (thoughtId) => {
@@ -43,15 +51,40 @@ export const ThoughtsProvider = ({ children }) => {
     );
     setThoughts(updatedThoughts);
     setForgottenThoughts((prev) => [...prev, forgottenThought]);
-    updateFeelingsFrequency();
+  };
+
+  const rememberThought = (thoughtId) => {
+    const updatedThoughts = forgottenThoughts.filter(
+      (thought) => thought.id !== thoughtId
+    );
+    const rememberedThought = forgottenThoughts.find(
+      (thought) => thought.id === thoughtId
+    );
+    setForgottenThoughts(updatedThoughts);
+    setThoughts((prev) => [...prev, rememberedThought]);
+  };
+
+  const lockThought = (thoughtId) => {
+    const updatedThoughts = thoughts.filter(
+      (thought) => thought.id !== thoughtId
+    );
+    const lockedThought = thoughts.find((thought) => thought.id === thoughtId);
+    setThoughts(updatedThoughts);
+    setLockedThoughts((prev) => [...prev, lockedThought]);
   };
 
   const deleteThought = (thoughtId) => {
-    const updatedForgottenThoughts = forgottenThoughts.filter(
-      (thought) => thought.id !== thoughtId
-    );
+    const updatedForgottenThoughts = forgottenThoughts.filter((thought) => {
+      return thought && thought.id !== thoughtId;
+    });
     setForgottenThoughts(updatedForgottenThoughts);
-    updateFeelingsFrequency();
+  };
+
+  const deleteLockedThought = (thoughtId) => {
+    const updatedLockedThoughts = lockedThoughts.filter((thought) => {
+      return thought && thought.id !== thoughtId;
+    });
+    setLockedThoughts(updatedLockedThoughts);
   };
 
   return (
@@ -62,6 +95,10 @@ export const ThoughtsProvider = ({ children }) => {
         forgottenThoughts,
         forgetThought,
         deleteThought,
+        rememberThought,
+        lockThought,
+        deleteLockedThought,
+        lockedThoughts,
         feelingsFrequency,
       }}
     >

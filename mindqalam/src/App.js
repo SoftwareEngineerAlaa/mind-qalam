@@ -12,6 +12,7 @@ import BrowseThoughts from "./componenets/BrowseThoughts/BrowseThoughts";
 import AnalyzeMood from "./componenets/AnalyzeMood/AnalyzeMood";
 import NavBar from "./componenets/NavBar/NavBar";
 import { ThoughtsProvider } from "./Context/ThoughtContext";
+import DarkChest from "./componenets/DarkChest/DarkChest";
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function RoutesWithNavBar() {
         <Route path="/Visualize" element={<VisualizeThoughts />} />
         <Route path="/BrowseThoughts" element={<BrowseThoughts />} />
         <Route path="/AnalyzeMood" element={<AnalyzeMood />} />
+        <Route path="/DarkChest" element={<DarkChest />} />
       </Routes>
     </>
   );

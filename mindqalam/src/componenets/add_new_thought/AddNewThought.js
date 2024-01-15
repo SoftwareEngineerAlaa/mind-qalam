@@ -32,7 +32,14 @@ function AddNewThought() {
       id: idGenerator(),
       content: thoughtContent,
       feelings: selectedFeelings, // Store selected feelings
-      inputDate: new Date().toISOString(),
+      inputDate: new Date().toLocaleString("en-US", {
+        hour: "numeric",
+        minute: "numeric",
+        hour12: true,
+        day: "2-digit",
+        month: "2-digit",
+        year: "numeric",
+      }),
     };
 
     addThought(newThought);

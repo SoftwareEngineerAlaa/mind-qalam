@@ -22,6 +22,9 @@ function NavBar() {
       <Link to="/AnalyzeMood">
         <button className="analyze-btn">Analyze my Mood</button>
       </Link>
+      <Link to="/DarkChest">
+        <button className="dark-chest-btn">Dark Chest</button>
+      </Link>
     </div>
   );
 }
