@@ -17,7 +17,7 @@ const DarkChest = () => {
       ) : (
         lockedThoughts.map(
           (thought) =>
-            thought && ( // Check if thought is not null
+            thought && (
               <Thought key={thought.id} {...thought} isInDarkChest={true} />
             )
         )

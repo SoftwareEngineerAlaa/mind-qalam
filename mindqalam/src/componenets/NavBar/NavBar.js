@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 function NavBar() {
   return (
     <div className="nav-bar">
+      {/* TODO Logo to be added */}
       <Link to="/Dashboard">
         <button className="dashboard-btn">Dashboard</button>
       </Link>

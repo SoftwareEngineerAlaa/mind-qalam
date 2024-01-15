@@ -4,7 +4,6 @@
   align-items: center;
   justify-content: center;
   width: 650px;
-  /* margin-bottom: 2rem; */
   border: 1px solid gainsboro;
   border-radius: 15px;
   overflow: hidden;
@@ -19,8 +18,6 @@
   justify-content: space-around;
   width: 100%;
   height: 60px;
-  /* margin-top: 10px; */
-  /* margin-bottom: 2rem; */
   background-color: rgb(248, 248, 248);
 }
 
@@ -30,7 +27,6 @@
 .info-piece h5 {
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
   justify-content: center;
   width: fit-content;
   border-radius: 5px;
@@ -45,7 +41,6 @@
   justify-content: space-around;
   width: 100%;
   height: 50px;
-  /* margin: 10px 0; */
   background-color: rgb(248, 248, 248);
 }
 

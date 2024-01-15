@@ -24,14 +24,14 @@ function AddNewThought() {
   const { addThought } = useContext(ThoughtsContext);
 
   function handleSaveThought() {
-    setShowFeelings(true); // Transition to feelings selection
+    setShowFeelings(true);
   }
 
   function handleAddFeeling() {
     const newThought = {
       id: idGenerator(),
       content: thoughtContent,
-      feelings: selectedFeelings, // Store selected feelings
+      feelings: selectedFeelings,
       inputDate: new Date().toLocaleString("en-US", {
         hour: "numeric",
         minute: "numeric",
@@ -45,7 +45,7 @@ function AddNewThought() {
     addThought(newThought);
     setThoughtContent("");
     setSelectedFeelings([]);
-    setShowFeelings(false); // Optionally reset to initial state
+    setShowFeelings(false)
   }
 
   const feelingsList = [

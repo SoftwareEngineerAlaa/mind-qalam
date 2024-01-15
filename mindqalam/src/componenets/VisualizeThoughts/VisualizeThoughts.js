@@ -3,27 +3,11 @@ import { ThoughtsContext } from "../../Context/ThoughtContext"; // Update the pa
 import "./VisualizeThoughts.css";
 import { Link } from "react-router-dom";
 
-// TODO mostly feeling since and least feeling since
-// TODO create a set of predefined responces for the compination of feelings and their frequency
-// TODO Add DARK CHEST and remove bad thoughts from mainlist to dark chest
-// TODO suggest the user to move bad thoughts to dark chest
-// TODO color emotions according to their emotion
-// TODO add a shining effect to Love and positive emotions
-// TODO Let the user see how positive and negative emotions they have via line graph
-// TODO add a button to show the user the most used words in their thoughts
-// TODO create a negative and positive word list and suggest the user to use positive words
-// TODO and not to use negative words
-// TODO in the DARK CHEST make the theme scary and dark
-// TODO in the forgotten list make the thoughts look like they are forgotten
-// TODO by adding a dust effect to them and make them look like they are old
-// TODO create an amazing visualization for the user to see their thoughts
-// TODO like a tree or a flower or a galaxy or a universe or a brain
-
 function VisualizeThoughts() {
   const { feelingsFrequency } = useContext(ThoughtsContext);
   const [circles, setCircles] = useState([]);
   const stageSize = [780, 500];
-  const maxAttempts = 500; // Increased max attempts
+  // const maxAttempts = 500; // Increased max attempts
 
   useEffect(() => {
     createCircles();

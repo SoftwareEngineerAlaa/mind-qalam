@@ -24,7 +24,7 @@ const Dashboard = () => {
         ))}
       </div>
       <p>Total Feelings Count: {totalFeelingsFrequency}</p>
-      {/* Other dashboard content */}
+      {/* TODO Other dashboard content to be completed */}
     </div>
   );
 };

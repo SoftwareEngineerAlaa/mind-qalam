@@ -15,30 +15,22 @@ function BrowseThoughts() {
 
   // Check if the thoughts or forgottenThoughts arrays are null or undefined
   if (!thoughts || !forgottenThoughts) {
-    return <div>Loading...</div>; // Or any other placeholder content
+    return <div>Loading...</div>;
   }
-
-  // Sort thoughts and forgottenThoughts from newest to oldest
-  const sortedThoughts = thoughts
-    .slice()
-    .sort((a, b) => b.createdAt - a.createdAt);
-  const sortedForgottenThoughts = forgottenThoughts
-    .slice()
-    .sort((a, b) => b.createdAt - a.createdAt);
 
   return (
     <div className="thoughts-list-container">
       {/* Regular Thoughts */}
-      {sortedThoughts.length === 0 ? (
+      {thoughts.length === 0 ? (
         <h1 className="no-thoughts-message">
           You have no thoughts yet, <Link to={"/"}>add some!</Link>
         </h1>
       ) : (
         <>
           <h1>Browse Thoughts</h1>
-          {sortedThoughts.map(
+          {thoughts.map(
             (thought) =>
-              thought && ( // Check if thought is not null
+              thought && (
                 <Thought
                   key={thought.id}
                   {...thought}
@@ -52,12 +44,12 @@ function BrowseThoughts() {
       )}
 
       {/* Forgotten Thoughts */}
-      {sortedForgottenThoughts.length === 0 ? null : (
+      {forgottenThoughts.length === 0 ? null : (
         <>
           <h1>Forgotten Thoughts</h1>
-          {sortedForgottenThoughts.map(
+          {forgottenThoughts.map(
             (thought) =>
-              thought && ( // Check if thought is not null
+              thought && (
                 <Thought
                   key={thought.id}
                   {...thought}
