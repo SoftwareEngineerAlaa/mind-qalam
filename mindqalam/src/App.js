@@ -21,6 +21,8 @@ import DarkChest from "./componenets/DarkChest/DarkChest";
 // TODO 1- Create cool CSS
 // TODO 8- Create a cool color theme
 // TODO 9- Create a cool font
+// TODO 10- Documentation
+// TODO 11- Readme.md File
 
 // TODO Possible improvements:
 // TODO 1- report sentence in Analyze and ?Dashboard?, mostly feeling since and least feeling since

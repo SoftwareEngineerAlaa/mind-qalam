@@ -37,7 +37,7 @@ function Thought({
 
       <div className="thought-actions">
         {!isForgotten && !isInDarkChest && (
-          <>
+          <div>
             <button
               className="forget-thought-btn"
               onClick={() => forgetThought(id)}
@@ -50,19 +50,21 @@ function Thought({
             >
               Lock Thought in the Dark Chest
             </button>
-          </>
+          </div>
         )}
         {isInDarkChest && (
-          <button
-            className="delete-dark-thought-btn"
-            onClick={() => deleteLockedThought(id)}
-          >
-            Delete Dark Thought
-          </button>
+          <div className="dark-list">
+            <button
+              className="delete-dark-thought-btn"
+              onClick={() => deleteLockedThought(id)}
+            >
+              Delete Dark Thought
+            </button>
+          </div>
         )}
 
         {isForgotten && (
-          <>
+          <div className="forgotten-list">
             <button
               className="delete-thought-btn"
               onClick={() => deleteThought(id)}
@@ -75,7 +77,7 @@ function Thought({
             >
               Remember Thought
             </button>
-          </>
+          </div>
         )}
       </div>
     </div>

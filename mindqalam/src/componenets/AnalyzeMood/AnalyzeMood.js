@@ -82,7 +82,8 @@ function processThoughtsData(thoughts) {
   const latestThoughts = thoughts.slice(-15);
 
   const positiveFeelings = [
-    "Happiness",
+    "Happy",
+    "Thankful",
     "Love",
     "Joy",
     "Trust",

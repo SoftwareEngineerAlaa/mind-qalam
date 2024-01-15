@@ -45,26 +45,44 @@ function AddNewThought() {
     addThought(newThought);
     setThoughtContent("");
     setSelectedFeelings([]);
-    setShowFeelings(false)
+    setShowFeelings(false);
   }
 
   const feelingsList = [
-    "Happiness",
+    "Happy",
+    "Thankful",
+    "Love",
+    "Trust",
+    "Joy",
+    "Optimism",
+    "Anticipation",
+    "Surprise",
     "Sadness",
     "Fear",
     "Disgust",
     "Anger",
-    "Surprise",
-    "Love",
-    "Joy",
-    "Trust",
-    "Anticipation",
-    "Optimism",
     "Pessimism",
     "Frustration",
     "Shame",
     "Guilt",
   ];
+
+  const feelingsType = {
+    positive: feelingsList.slice(0, 8),
+    negative: feelingsList.slice(8, 16),
+  };
+
+  function getFeelingClassName(feeling) {
+    // Check if the feeling is in the positive list
+    if (feelingsType.positive.includes(feeling)) {
+      return "positive-feeling";
+    }
+    // Check if the feeling is in the negative list
+    else if (feelingsType.negative.includes(feeling)) {
+      return "negative-feeling";
+    }
+    return ""; // Default return if not found in either list
+  }
 
   function handleFeelingSelection(feeling) {
     setSelectedFeelings((prev) => {
@@ -80,9 +98,6 @@ function AddNewThought() {
     <div className="add-new-thought-container">
       {!showFeelings ? (
         <>
-          <label className="input-label" htmlFor="thought">
-            Type what do you have in mind?
-          </label>
           <input
             value={thoughtContent}
             onChange={(e) => setThoughtContent(e.target.value)}
@@ -90,29 +105,43 @@ function AddNewThought() {
             type="text"
             id="thought"
             name="thought"
+            placeholder="Write your thought here..."
           />
-          <button
-            onClick={handleSaveThought}
-            className="save-input-btn"
-            type="button"
-          >
-            Save This Thought
-          </button>
+          {thoughtContent.length > 0 && (
+            <button
+              onClick={handleSaveThought}
+              className="save-input-btn"
+              type="button"
+            >
+              Save This Thought
+            </button>
+          )}
         </>
       ) : (
         <>
-          <label>How do you feel? Choose one or more:</label>
+          <label>
+            How do you feel when writing this thought?
+            <br />
+            You could choose more than one:
+          </label>
           <div className="feelings-list">
             {feelingsList.map((feeling) => (
-              <div key={feeling}>
+              <div>
                 <input
                   type="checkbox"
+                  className="checkbox-btn"
                   id={feeling}
                   name={feeling}
                   checked={selectedFeelings.includes(feeling)}
                   onChange={() => handleFeelingSelection(feeling)}
                 />
-                <label htmlFor={feeling}>{feeling}</label>
+                <label
+                  className={getFeelingClassName(feeling)}
+                  key={feeling}
+                  htmlFor={feeling}
+                >
+                  {feeling}
+                </label>
               </div>
             ))}
           </div>
@@ -120,12 +149,19 @@ function AddNewThought() {
             onClick={handleAddFeeling}
             className="add-feeling-btn"
             type="button"
+            disabled={selectedFeelings.length === 0}
           >
-            Add Feeling
+            {`${
+              selectedFeelings.length === 0
+                ? "Select one or several Feelings"
+                : `Attach Feeling${
+                    selectedFeelings.length > 1 ? "s and Save" : ""
+                  }`
+            }`}
           </button>
         </>
       )}
-      <Link to="/dashboard">
+      <Link className="nothing-link" to="/dashboard">
         <button className="nothing-now-btn" type="button">
           {returnBtn}
         </button>

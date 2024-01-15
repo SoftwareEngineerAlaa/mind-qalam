@@ -1,5 +1,5 @@
 .add-new-thought-container {
-  margin-top: 300px;
+  margin-top: 150px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,12 +10,13 @@
 }
 
 .input {
-  width: 300px;
-  height: 30px;
-  border-radius: 10px;
+  width: 360px;
+  height: 45px;
+  border-radius: 25px;
   border: 1px solid rgb(175, 175, 175);
   margin: 10px;
-  padding-left: 10px;
+  padding-left: 20px;
+  font-size: 15px;
   background-color: #d9d9d9;
   border: none;
 }
@@ -41,7 +42,64 @@
 .save-input-btn {
   width: 170px;
 }
+.nothing-link {
+  height: 50px;
+}
 .nothing-now-btn {
-  margin-top: 100px;
   width: 240px;
+}
+
+.feelings-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 600px;
+  gap: 20px;
+  margin: 30px;
+}
+
+.positive-feeling,
+.negative-feeling {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  width: 120px;
+  height: 40px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.checkbox-btn {
+  display: none;
+}
+
+.positive-feeling {
+  background-color: rgb(182, 240, 184);
+}
+
+.negative-feeling {
+  background-color: rgb(250, 212, 212);
+}
+
+.checkbox-btn:checked + .positive-feeling {
+  background-color: rgb(21, 182, 134);
+  color: white;
+}
+.checkbox-btn:checked + .negative-feeling {
+  background-color: rgb(236, 59, 59);
+  color: white;
+}
+
+.add-feeling-btn:disabled {
+  cursor: auto;
+}
+
+.nothing-link {
+  height: 25px;
+  margin-top: 70px;
 }
