@@ -1,15 +1,17 @@
 import React, { useEffect, useState, useContext } from "react";
 import { v4 as idGenerator } from "uuid";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { ThoughtsContext } from "../../Context/ThoughtContext";
 import "./AddNewThought.css";
-// import "./AddNewThought.sass";
 
 function AddNewThought() {
   const [thoughtContent, setThoughtContent] = useState("");
   const [showFeelings, setShowFeelings] = useState(false);
   const [selectedFeelings, setSelectedFeelings] = useState([]);
   const [returnBtn, setReturnBtn] = useState("Nothing in my mind right now");
+  const [redirectToDashboard, setRedirectToDashboard] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
+  const [isThoughtSaved, setIsThoughtSaved] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -44,6 +46,10 @@ function AddNewThought() {
     };
 
     addThought(newThought);
+    setSuccessMessage("✅Thought Saved Successfully");
+    setTimeout(() => {
+      setRedirectToDashboard(true);
+    }, 2000); // Redirect after 2 seconds
     setThoughtContent("");
     setSelectedFeelings([]);
     setShowFeelings(false);
@@ -74,15 +80,12 @@ function AddNewThought() {
   };
 
   function getFeelingClassName(feeling) {
-    // Check if the feeling is in the positive list
     if (feelingsType.positive.includes(feeling)) {
       return "positive-feeling";
-    }
-    // Check if the feeling is in the negative list
-    else if (feelingsType.negative.includes(feeling)) {
+    } else if (feelingsType.negative.includes(feeling)) {
       return "negative-feeling";
     }
-    return ""; // Default return if not found in either list
+    return "";
   }
 
   function handleFeelingSelection(feeling) {
@@ -95,8 +98,27 @@ function AddNewThought() {
     });
   }
 
+  if (redirectToDashboard) {
+    return <Navigate to="/dashboard" />;
+  }
+
+  if (isThoughtSaved) {
+    return (
+      <div className="success-message">
+        ✅Thought Saved Successfully
+        <br />
+        you can see it in Browse Thoughts Page
+      </div>
+    );
+  }
+
   return (
     <div className="add-new-thought-container">
+      {successMessage && (
+        <div className="success-message">
+          <h1>{successMessage}</h1>
+        </div>
+      )}
       {!showFeelings ? (
         <>
           <input
@@ -128,7 +150,7 @@ function AddNewThought() {
           </label>
           <div className="feelings-list">
             {feelingsList.map((feeling) => (
-              <div>
+              <div key={feeling}>
                 <input
                   type="checkbox"
                   className="checkbox-btn"
@@ -139,7 +161,6 @@ function AddNewThought() {
                 />
                 <label
                   className={getFeelingClassName(feeling)}
-                  key={feeling}
                   htmlFor={feeling}
                 >
                   {feeling}
@@ -153,13 +174,11 @@ function AddNewThought() {
             type="button"
             disabled={selectedFeelings.length === 0}
           >
-            {`${
-              selectedFeelings.length === 0
-                ? "Select one or several Feelings"
-                : `Attach Feeling${
-                    selectedFeelings.length > 1 ? "s and Save" : " and Save"
-                  }`
-            }`}
+            {selectedFeelings.length === 0
+              ? "Select one or several Feelings"
+              : `Attach Feeling${
+                  selectedFeelings.length > 1 ? "s and Save" : " and Save"
+                }`}
           </button>
         </>
       )}

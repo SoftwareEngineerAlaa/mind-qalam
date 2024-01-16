@@ -111,3 +111,15 @@
   height: 25px;
   margin-top: 70px;
 }
+
+.success-message {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.699);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(0, 255, 13);
+  margin-top: 100px;
+}
