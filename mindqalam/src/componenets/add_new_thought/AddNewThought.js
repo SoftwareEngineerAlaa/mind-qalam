@@ -3,6 +3,7 @@ import { v4 as idGenerator } from "uuid";
 import { Link } from "react-router-dom";
 import { ThoughtsContext } from "../../Context/ThoughtContext";
 import "./AddNewThought.css";
+// import "./AddNewThought.sass";
 
 function AddNewThought() {
   const [thoughtContent, setThoughtContent] = useState("");
@@ -106,6 +107,7 @@ function AddNewThought() {
             id="thought"
             name="thought"
             placeholder="Write your thought here..."
+            autoComplete="off"
           />
           {thoughtContent.length > 0 && (
             <button
@@ -155,7 +157,7 @@ function AddNewThought() {
               selectedFeelings.length === 0
                 ? "Select one or several Feelings"
                 : `Attach Feeling${
-                    selectedFeelings.length > 1 ? "s and Save" : ""
+                    selectedFeelings.length > 1 ? "s and Save" : " and Save"
                   }`
             }`}
           </button>

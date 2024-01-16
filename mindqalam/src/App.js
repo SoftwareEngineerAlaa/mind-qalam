@@ -13,6 +13,7 @@ import AnalyzeMood from "./componenets/AnalyzeMood/AnalyzeMood";
 import NavBar from "./componenets/NavBar/NavBar";
 import { ThoughtsProvider } from "./Context/ThoughtContext";
 import DarkChest from "./componenets/DarkChest/DarkChest";
+import WelcomeScreen from "./componenets/WelcomeScreen/WelcomeScreen";
 
 // TODO MUST DO:
 // TODO 1- confirmation notification for each action made by the user
@@ -58,9 +59,13 @@ function RoutesWithNavBar() {
 
   return (
     <>
-      {location.pathname !== "/" && <NavBar />}
+      {/* Render NavBar for all routes except the root and WelcomeScreen */}
+      {location.pathname !== "/" && location.pathname !== "/AddThought" && (
+        <NavBar />
+      )}
       <Routes>
-        <Route path="/" element={<AddNewThought />} />
+        <Route path="/" element={<WelcomeScreen />} />
+        <Route path="/AddThought" element={<AddNewThought />} />
         <Route path={"/Dashboard" || "/dashboard"} element={<Dashboard />} />
         <Route path="/Visualize" element={<VisualizeThoughts />} />
         <Route path="/BrowseThoughts" element={<BrowseThoughts />} />

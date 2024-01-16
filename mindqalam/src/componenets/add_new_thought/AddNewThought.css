@@ -71,6 +71,7 @@
   height: 40px;
   border-radius: 10px;
   cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
   transition: all 0.3s ease-in-out;
 }
 
@@ -79,20 +80,27 @@
 }
 
 .positive-feeling {
-  background-color: rgb(182, 240, 184);
+  background-color: rgba(182, 240, 184, 0.25);
 }
 
 .negative-feeling {
-  background-color: rgb(250, 212, 212);
+  background-color: rgb(250, 212, 212, 0.25);
 }
 
 .checkbox-btn:checked + .positive-feeling {
-  background-color: rgb(21, 182, 134);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  background-color: rgb(21, 182, 134, 0.25);
   color: white;
 }
 .checkbox-btn:checked + .negative-feeling {
-  background-color: rgb(236, 59, 59);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  background-color: rgb(236, 59, 59, 0.25);
   color: white;
+}
+
+.add-feeling-btn {
 }
 
 .add-feeling-btn:disabled {

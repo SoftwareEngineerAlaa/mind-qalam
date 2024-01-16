@@ -49,9 +49,10 @@ function AnalyzeMood() {
             beginAtZero: true,
             ticks: {
               callback: function (value) {
-                if (value > 0) return "Positive";
-                if (value < 0) return "Negative";
-                return "Neutral";
+                if (value === 2) return "Positive";
+                if (value === -2) return "Negative";
+                if (value === 0) return "Neutral";
+                else return "";
               },
             },
           },
@@ -69,7 +70,7 @@ function AnalyzeMood() {
   }, [thoughts]);
 
   return (
-    <div>
+    <div className="analyze-mood">
       <h1>Analyze Mood</h1>
       <canvas ref={chartRef} className="mood-chart"></canvas>
     </div>

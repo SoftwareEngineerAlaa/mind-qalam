@@ -1,4 +1,13 @@
+body {
+  background: linear-gradient(
+    45deg,
+    rgba(178, 246, 255, 0.723) 0%,
+    rgba(197, 217, 255, 0.477) 48%,
+    rgba(131, 255, 220, 0.473) 100%
+  );
+}
 .mood-chart {
   width: 800px;
   height: 400px;
+  background-color: rgba(255, 255, 255, 0.596);
 }
