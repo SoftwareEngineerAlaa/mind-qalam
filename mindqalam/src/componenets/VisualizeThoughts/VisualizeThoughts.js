@@ -9,6 +9,31 @@ function VisualizeThoughts() {
   const stageSize = [780, 500];
   // const maxAttempts = 500; // Increased max attempts
 
+  const emotionColorMap = {
+    Happy: "rgba(240, 230, 140, 0.6)", // Example color for "Happy" with opacity 0.6
+    Thankful: "rgba(255, 20, 147, 0.6)", // Example color for "Thankful" with opacity 0.6
+    Love: "rgba(255, 0, 255, 0.6)", // Example color for "Love" with opacity 0.6
+    Trust: "rgba(0, 255, 255, 0.6)", // Example color for "Trust" with opacity 0.6
+    Joy: "rgba(255, 165, 0, 0.6)", // Example color for "Joy" with opacity 0.6
+    Optimism: "rgba(0, 0, 255, 0.6)", // Example color for "Optimism" with opacity 0.6
+    Anticipation: "rgba(128, 128, 128, 0.6)", // Example color for "Anticipation" with opacity 0.6
+    Surprise: "rgba(255, 255, 0, 0.6)", // Example color for "Surprise" with opacity 0.6
+    Sadness: "rgba(100, 149, 237, 0.6)", // Example color for "Sadness" with opacity 0.6
+    Fear: "rgba(255, 127, 80, 0.6)", // Example color for "Fear" with opacity 0.6
+    Disgust: "rgba(0, 128, 0, 0.6)", // Example color for "Disgust" with opacity 0.6
+    Anger: "rgba(255, 0, 0, 0.6)", // Example color for "Anger" with opacity 0.6
+    Pessimism: "rgba(0, 0, 0, 0.6)", // Example color for "Pessimism" with opacity 0.6
+    Frustration: "rgba(128, 0, 128, 0.6)", // Example color for "Frustration" with opacity 0.6
+    Shame: "rgba(165, 42, 42, 0.6)", // Example color for "Shame" with opacity 0.6
+    Guilt: "rgba(0, 128, 128, 0.6)", // Example color for "Guilt" with opacity 0.6
+  };
+
+  const calculateFontSize = (radius) => {
+    const scaleFactor = 0.3;
+    let fontSize = radius * scaleFactor;
+    return fontSize;
+  };
+
   useEffect(() => {
     createCircles();
   }, [feelingsFrequency]);
@@ -110,9 +135,12 @@ function VisualizeThoughts() {
                 height: circle.radius * 2,
                 left: circle.x - circle.radius,
                 top: circle.y - circle.radius,
+                backgroundColor: emotionColorMap[circle.emotion] || "skyblue",
+                fontSize: calculateFontSize(circle.radius),
               }}
             >
               {circle.emotion}
+              {console.log(calculateFontSize(circle.radius))}
             </div>
           ))}
         </div>

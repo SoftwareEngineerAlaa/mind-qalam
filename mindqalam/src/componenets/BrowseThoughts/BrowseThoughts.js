@@ -71,22 +71,36 @@ function BrowseThoughts() {
       )}
 
       {/* Forgotten Thoughts */}
-      {forgottenThoughts.length === 0 ? null : (
-        <div className="forgotten-list">
-          <h2 className="thoughts-list-title">Forgotten Thoughts</h2>
-          <h2
-            className="left-arrow-btn"
-            onClick={() => navigateThought(false, true)}
-          ></h2>
-          <Thought
-            {...forgottenThoughts[currentForgottenIndex]}
-            deleteThought={deleteThought}
-            isForgotten={true}
-          />
-          <h2
-            className="right-arrow-btn"
-            onClick={() => navigateThought(true, true)}
-          ></h2>
+      {forgottenThoughts.length === 0 ? (
+        <h1 className="no-thoughts-message">
+          You have no forgotten thoughts, <Link to={"/"}>add some!</Link>
+        </h1>
+      ) : (
+        <div>
+          <h2 className="thoughts-list-title">
+            Here are your Forgotten Thoughts
+          </h2>
+          <div className="thoughts-list">
+            <h1
+              className="left-arrow-btn"
+              onClick={() => navigateThought(false, true)}
+            >
+              ⟨
+            </h1>
+            <div className="forgotten-thought">
+              <Thought
+                {...forgottenThoughts[currentForgottenIndex]}
+                deleteThought={deleteThought}
+                isForgotten={true}
+              />
+            </div>
+            <h1
+              className="right-arrow-btn"
+              onClick={() => navigateThought(true, true)}
+            >
+              ⟩
+            </h1>
+          </div>
         </div>
       )}
     </div>

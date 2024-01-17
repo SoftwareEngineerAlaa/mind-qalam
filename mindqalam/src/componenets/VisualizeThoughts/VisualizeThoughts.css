@@ -15,7 +15,8 @@
   justify-content: center;
   width: 780px;
   height: 100%;
-  border: 1px solid gainsboro;
+  border: 1px solid rgba(220, 220, 220, 0.473);
+  background-color: rgba(255, 255, 255, 0.247);
   border-radius: 20px;
 }
 
@@ -26,7 +27,5 @@
   align-items: center;
   justify-content: center;
   color: white;
-  background-color: skyblue;
   text-align: center;
-  font-size: smaller; /* Adjust as needed */
 }

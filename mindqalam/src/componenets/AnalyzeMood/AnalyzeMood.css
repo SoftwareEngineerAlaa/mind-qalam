@@ -1,13 +1,24 @@
 body {
-  background: linear-gradient(
-    45deg,
-    rgba(178, 246, 255, 0.723) 0%,
-    rgba(197, 217, 255, 0.477) 48%,
-    rgba(131, 255, 220, 0.473) 100%
-  );
+  background-image: linear-gradient(
+      45deg,
+      rgba(178, 246, 255, 0.4) 0%,
+      rgba(197, 217, 255, 0.4) 48%,
+      rgba(131, 255, 220, 0.4) 100%
+    ),
+    url("../../assets/appBackground.png");
+  background-blend-mode: normal;
+  box-shadow: inset 0 0 150px rgb(0, 0, 0);
+  color: white;
+  text-shadow: 0px 2px 4px #000000;
 }
 .mood-chart {
+  color: white;
   width: 800px;
   height: 400px;
-  background-color: rgba(255, 255, 255, 0.596);
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+}
+
+.analyze-mood-title {
+  color: white;
 }

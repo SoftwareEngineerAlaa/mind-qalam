@@ -71,7 +71,7 @@ function AnalyzeMood() {
 
   return (
     <div className="analyze-mood">
-      <h1>Analyze Mood</h1>
+      <h1 className="analyze-mood-title">Analyze Mood</h1>
       <canvas ref={chartRef} className="mood-chart"></canvas>
     </div>
   );

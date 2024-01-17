@@ -66,12 +66,12 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  color: black;
+  color: rgb(223, 223, 223);
   width: 120px;
   height: 40px;
   border-radius: 10px;
   cursor: pointer;
-  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  box-shadow: rgba(0, 0, 0, 0.473) 0px 1px 3px, rgba(0, 0, 0, 0.445) 0px 1px 2px;
   transition: all 0.3s ease-in-out;
 }
 

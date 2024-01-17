@@ -12,7 +12,12 @@
 .gauge {
   width: 100%;
   height: 100%;
-  background: linear-gradient(to right, #4caf50 0%, #ffeb3b 50%, #f44336 100%);
+  background: linear-gradient(
+    to right,
+    #f44336d2 0%,
+    #ffeb3bc7 50%,
+    #4caf4fde 100%
+  );
   border-radius: 100px 100px 0 0;
   display: flex;
   justify-content: center;
@@ -20,9 +25,11 @@
 }
 
 .gauge-needle {
-  width: 2px; /* Adjusted for a thinner appearance */
-  height: 90%;
-  background-color: blue;
+  width: 0; /* No width, as we will use borders to create the shape */
+  height: 0; /* No height, as we will use borders to create the shape */
+  border-left: 5px solid transparent; /* Left border, half the base width of the needle */
+  border-right: 5px solid transparent; /* Right border, half the base width of the needle */
+  border-bottom: 90px solid rgb(90, 90, 90); /* Bottom border, height and color of the needle */
   position: absolute;
   bottom: 0;
   left: 50%;

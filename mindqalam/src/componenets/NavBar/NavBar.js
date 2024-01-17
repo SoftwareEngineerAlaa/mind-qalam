@@ -6,36 +6,36 @@ function NavBar() {
   return (
     <div className="nav-bar">
       {/* TODO Logo to be added */}
-      <Link className="button-26" to="/Dashboard">
+      <Link className="button-nav" to="/Dashboard">
         <button className="btn">
-          <span className="button-26__text">Dashboard</span>
+          <span className="button-text">Dashboard</span>
         </button>
       </Link>
-      <Link className="button-26" to="/AddThought">
+      <Link className="button-nav" to="/AddThought">
         <button className="btn">
-          <span className="button-26__text">Add Thought</span>
+          <span className="button-text">Add Thought</span>
         </button>
       </Link>
-      <Link className="button-26" to="/BrowseThoughts">
+      <Link className="button-nav" to="/BrowseThoughts">
         <button className="btn">
-          <span className="button-26__text">Browse Thoughts</span>
-        </button>
-      </Link>
-
-      <Link className="button-26" to="/Visualize">
-        <button className="btn">
-          <span className="button-26__text">Visualize Thoughts</span>
+          <span className="button-text">Browse Thoughts</span>
         </button>
       </Link>
 
-      <Link className="button-26" to="/AnalyzeMood">
+      <Link className="button-nav" to="/Visualize">
         <button className="btn">
-          <span className="button-26__text">Analyze Mood</span>
+          <span className="button-text">Visualize Thoughts</span>
         </button>
       </Link>
-      <Link className="button-26" to="/DarkChest">
+
+      <Link className="button-nav" to="/AnalyzeMood">
         <button className="btn">
-          <span className="button-26__text">Dark Chest</span>
+          <span className="button-text">Analyze Mood</span>
+        </button>
+      </Link>
+      <Link className="button-nav-dark" to="/DarkChest">
+        <button className="btn-dark">
+          <span className="button-text-dark">Dark Chest</span>
         </button>
       </Link>
     </div>
@@ -43,43 +43,3 @@ function NavBar() {
 }
 
 export default NavBar;
-
-// function NavBar() {
-//   return (
-//     <div className="nav-bar">
-//       {/* TODO Logo to be added */}
-//       <Link className="button-26" to="/Dashboard">
-//         <button className="dashboard-btn">
-//           <span className="button-26__text">Dashboard</span>
-//         </button>
-//       </Link>
-//       <Link className="button-26" to="/">
-//         <button className="thought-btn">
-//           <span className="button-26__text">Add Thought</span>
-//         </button>
-//       </Link>
-//       <Link className="button-26" to="/BrowseThoughts">
-//         <button className="browse-btn">
-//           <span className="button-26__text">Browse Thoughts</span>
-//         </button>
-//       </Link>
-
-//       <Link className="button-26" to="/Visualize">
-//         <button className="visualize-btn">
-//           <span className="button-26__text">Visualize Thoughts</span>
-//         </button>
-//       </Link>
-
-//       <Link className="button-26" to="/AnalyzeMood">
-//         <button className="analyze-btn">
-//           <span className="button-26__text">Analyze Mood</span>
-//         </button>
-//       </Link>
-//       <Link className="button-26" to="/DarkChest">
-//         <button className="dark-chest-btn">
-//           <span className="button-26__text">Dark Chest</span>
-//         </button>
-//       </Link>
-//     </div>
-//   );
-// }
