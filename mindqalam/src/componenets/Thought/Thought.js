@@ -33,7 +33,9 @@ function Thought({
         </div>
       </div>
 
-      <p className="thought-content">{content}</p>
+      <div className="thought-content">
+        <p>{content}</p>
+      </div>
 
       <div className="thought-actions">
         {!isForgotten && !isInDarkChest && (

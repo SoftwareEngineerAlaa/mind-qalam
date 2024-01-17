@@ -11,7 +11,6 @@ function WelcomeScreen() {
       navigate("/AddThought");
     }, 3500);
 
-    // Clean up the timer when the component unmounts
     return () => clearTimeout(timer);
   }, [navigate]);
   return (

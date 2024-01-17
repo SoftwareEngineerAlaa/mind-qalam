@@ -32,7 +32,6 @@ function BrowseThoughts() {
     }
   };
 
-  // Check if the thoughts or forgottenThoughts arrays are null or undefined
   if (!thoughts || !forgottenThoughts) {
     return <div>Loading...</div>;
   }

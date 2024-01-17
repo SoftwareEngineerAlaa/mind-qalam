@@ -22,6 +22,10 @@
 }
 
 .thought-content {
+  font-size: large;
+  text-align: center;
+  width: 100%;
+  background-color: rgba(128, 128, 128, 0.384);
   padding: 0 10px;
 }
 .info-piece h5 {
@@ -41,7 +45,7 @@
   justify-content: space-around;
   width: 100%;
   height: 50px;
-  background-color: rgba(255, 255, 255, 0.226);
+  background-color: rgba(255, 255, 255, 0.25);
   column-gap: 10px;
 }
 
@@ -51,7 +55,7 @@
   border-radius: 10px;
   border: 1px solid rgb(175, 175, 175);
   font-weight: 400;
-  background-color: rgba(255, 255, 255, 0.247);
+  background-color: rgba(255, 255, 255, 0.25);
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
@@ -68,12 +72,10 @@
 }
 
 .forgotten-thought {
-  /* Apply a blur effect */
   filter: blur(5px);
-  transition: filter 0.3s ease; /* Smooth transition for the blur effect */
+  transition: filter 0.3s ease;
 }
 
 .forgotten-thought:hover {
-  /* Remove the blur effect on hover */
   filter: blur(0);
 }

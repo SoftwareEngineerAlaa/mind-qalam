@@ -76,9 +76,7 @@
   flex-direction: column;
   width: 100%;
   height: fit-content;
-  /* border-bottom: 2px solid #ddd; */
   margin: 15px 0 5px 0;
-  /* border-top: 2px solid #ddd; */
 }
 
 .feelings-stats {
@@ -98,10 +96,7 @@
   align-items: center;
   flex-direction: column;
   width: 350px;
-  /* min-height: 220px; */
   background-color: var(--containers-color);
-  /* border-bottom: 2px solid #ddd; */
-  /* margin: 20px 0; */
 }
 
 .feel-content-positive,
@@ -117,9 +112,6 @@
   height: 45px;
   padding: 10px;
   border: 2px solid #fdfdfd56;
-  /* box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
-    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset; */
 }
 
 .feelings-display {

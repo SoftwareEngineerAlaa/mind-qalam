@@ -5,7 +5,6 @@
 }
 .thoughts-list-title {
   margin-top: 35px;
-  /* font-size: 30px; */
   font-weight: 400;
   text-align: center;
 }
@@ -30,12 +29,10 @@
 }
 
 .forgotten-thought {
-  /* Apply a blur effect */
   filter: blur(5px);
-  transition: filter 0.3s ease; /* Smooth transition for the blur effect */
+  transition: filter 0.3s ease;
 }
 
 .forgotten-thought:hover {
-  /* Remove the blur effect on hover */
   filter: blur(0);
 }

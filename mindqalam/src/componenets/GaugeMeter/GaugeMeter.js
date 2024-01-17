@@ -13,9 +13,7 @@ function GaugeMeter({ lowerValue, higherValue, currentValue }) {
 
   return (
     <div className="gauge-container">
-      <div className="gauge">
-        {/* Optional: Add scale marks and labels here */}
-      </div>
+      <div className="gauge"></div>
       <div
         className="gauge-needle"
         style={{ transform: `rotate(${rotation}deg)` }}
