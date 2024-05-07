@@ -89,8 +89,7 @@ const Dashboard = () => {
           <GaugeMeter
             lowerValue={50}
             higherValue={-50}
-            // currentValue={moodMeterValue}
-            currentValue={10} // for the showcase
+            currentValue={moodMeterValue}
           />
           <h3>
             Mostly:{" "}

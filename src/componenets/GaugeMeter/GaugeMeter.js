@@ -9,7 +9,7 @@ function GaugeMeter({ lowerValue, higherValue, currentValue }) {
   }, [currentValue]);
 
   const rotation =
-    ((animatedValue - lowerValue) / (higherValue - lowerValue)) * 180;
+    (animatedValue - lowerValue) / (higherValue - lowerValue) / 2 + 45;
 
   return (
     <div className="gauge-container">

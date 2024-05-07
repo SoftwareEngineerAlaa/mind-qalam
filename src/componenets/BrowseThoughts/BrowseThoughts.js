@@ -16,7 +16,6 @@ function BrowseThoughts() {
   const [currentThoughtIndex, setCurrentThoughtIndex] = useState(0);
   const [currentForgottenIndex, setCurrentForgottenIndex] = useState(0);
 
-  // Navigate to the next or previous thought
   const navigateThought = (isNext, isForgotten = false) => {
     if (isForgotten) {
       const newIndex = isNext

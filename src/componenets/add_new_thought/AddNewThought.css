@@ -100,9 +100,6 @@
   color: white;
 }
 
-.add-feeling-btn {
-}
-
 .add-feeling-btn:disabled {
   cursor: auto;
 }

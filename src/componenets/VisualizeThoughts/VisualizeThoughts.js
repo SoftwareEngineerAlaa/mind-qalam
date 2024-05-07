@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from "react";
-import { ThoughtsContext } from "../../Context/ThoughtContext"; // Update the path accordingly
+import { ThoughtsContext } from "../../Context/ThoughtContext";
 import "./VisualizeThoughts.css";
 import { Link } from "react-router-dom";
 
@@ -7,7 +7,6 @@ function VisualizeThoughts() {
   const { feelingsFrequency } = useContext(ThoughtsContext);
   const [circles, setCircles] = useState([]);
   const stageSize = [780, 500];
-  // const maxAttempts = 500; // Increased max attempts
 
   const emotionColorMap = {
     Happy: "rgba(240, 230, 140, 0.6)",
