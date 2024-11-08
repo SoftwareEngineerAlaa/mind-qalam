@@ -111,7 +111,7 @@ These developments aim to make [Your App Name] not just a tool, but a versatile 
 
 **Your Name**
 
-- [GitHub](https://github.com/SoftwareEngineerAlaa)
+- [GitHub Portfolio](https://github.com/SoftwareEngineerAlaa)
 - [LinkedIn](https://www.linkedin.com/in/alaa-tahhan/)
 
 Thank you for exploring Mind Qalam!
