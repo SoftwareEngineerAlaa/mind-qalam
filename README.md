@@ -111,7 +111,6 @@ These developments aim to make [Your App Name] not just a tool, but a versatile 
 
 **Your Name**
 
-- [Portfolio](https://alaatahhan.netlify.app/)
 - [GitHub](https://github.com/SoftwareEngineerAlaa)
 - [LinkedIn](https://www.linkedin.com/in/alaa-tahhan/)
 
